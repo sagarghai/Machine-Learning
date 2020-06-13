@@ -46,6 +46,25 @@ class LinearModel():
 
 This algorithm is very similar to linear regression but instead of using the linear equation as the base model, it uses the sigmoid function. This can only be used for binary classification. 
 
+```python
+
+class LogisticRegression():
+    def __init__(self, x, y, n_iter=1500, lr=0.01):
+        self.w = np.zeros((x.shape[1], 1))
+        self.lr = lr/x.shape[0]
+        self.n_iter = n_iter
+        self.x, self.y = x, y
+
+    def fit(self):
+            for i in range(self.n_iter):
+                predictions = self.predict(self.x)
+                delta = self.y - predictions
+                self.w += (self.lr * (self.x.T @ delta))
+        
+    def predict(self, x):
+            l = x @ self.w
+            return np.round(sigmoid(l))
+```
 
 ### Decision Tree Regressor
 
@@ -148,3 +167,5 @@ class RandomForestR():
 ## License
 
 MIT License
+
+Copyright (c) 2020 Sagar Ghai
