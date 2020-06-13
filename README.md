@@ -22,7 +22,8 @@ Most managers and developers don't trust machine learning today for various reas
 
 The simplest regression analysis algorithm. Uses backward learning to train itself. 
 
-'''python
+```python
+
 class LinearModel():
     def __init__(self, X, y, n_iter=1000, learning_rate=0.01):
         self.w = np.zeros((X.shape[1], 1))
@@ -39,7 +40,7 @@ class LinearModel():
     
     def predict(self, X):
         return X @ self.w
-'''
+```
 
 ### Logistic Regression
 
@@ -50,7 +51,8 @@ This algorithm is very similar to linear regression but instead of using the lin
 
 This is a tree based structure that uses multiple cuts as the ideal way to getting spatial classification using the average as the output.
 
-'''python
+```python
+
 class DecisionTree():
     def __init__(self, x, y, tree_ids, min_leaf_samples=3):
         self.x, self.y, self.tree_ids, self.min_leaf_samples = x, y, tree_ids, min_leaf_samples
@@ -119,13 +121,13 @@ class DecisionTree():
             output += f' column: {self.x.columns[self.split_col]}, value: {self.split_val}'
         return output
         
-'''
+```
 
 ### Random Forest Regressor
 
 This is an ensemble based classifier that builds on top of the decision tree class.
 
-'''python
+```python
 class RandomForestR():
     def __init__(self, x, y, n_trees=10, min_leaf_samples=3, n_samples=50):
         np.random.seed(42)
@@ -141,7 +143,7 @@ class RandomForestR():
     def score(self, x, y):
         return r2_score(y, self.predict(x))
 
-'''
+```
 
 ## License
 
