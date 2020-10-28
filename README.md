@@ -1,6 +1,6 @@
 # PyLines
 
-Unboxing the black box that is Machine Learning. 
+Unboxing the black box that is Machine Learning. View documentation at https://sagarghai.com/PyLines
 
 ## About
 
